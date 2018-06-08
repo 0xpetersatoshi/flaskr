@@ -1,18 +1,26 @@
 <!doctype html>
 <title>{% block title %}{% endblock %} - Flaskr</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <h1 class="navbar-brand">Flaskr</h1>
-  <ul class="navbar-nav mr-auto">
-    {% if g.user %}
+  <a class="navbar-brand" href="#">Flaskr</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      {% if g.user %}
       <li class="nav-item active"><span>{{ g.user['username'] }}</span>
       <li class="nav-item"><a href="{{ url_for('auth.logout') }}">Log Out</a>
-    {% else %}
-      <li class="nav-item active"><a href="{{ url_for('auth.register') }}">Register</a>
-      <li class="nav-item"><a href="{{ url_for('auth.login') }}">Log In</a>
-    {% endif %}
-  </ul>
+      {% else %}
+      <li class="nav-item active"><a  class="nav-link" href="{{ url_for('auth.register') }}">Register</a>
+      <li class="nav-item"><a  class="nav-link" href="{{ url_for('auth.login') }}">Log In</a>
+      {% endif %}
+    </ul>
+  </div>
 </nav>
+
 <section class="content">
   <header>
     {% block header %}{% endblock %}
