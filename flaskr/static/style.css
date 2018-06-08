@@ -432,7 +432,24 @@ input[type=submit] { align-self: start; min-width: 10em; } */
  .page-header {
    padding: 2rem 0 2rem 0;
  }
- 
+
+ .spacer {
+   margin-bottom: 2rem;
+ }
+
+ .non-default {
+   color: white;
+ }
+
+ .non-default:hover {
+   color: white;
+ }
+
+ .username-fmt {
+   margin-right: 0.5rem;
+   color: white;
+ }
+
  .lead {
    font-size: 1.171875rem;
    font-weight: 300;
